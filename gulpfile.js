@@ -26,9 +26,9 @@ function compilaSass(){
         .pipe(gulp.dest('./buil/styles'));
 }
 
-exports.defult = function() {
-    gulp.watch('./source/styles/*.scss' , gulp.series(compilaSass));
-    gulp.watch('./source/scripts/*.js' , gulp.series(comprimeJavaScript));
-    gulp.watch('./source/images/*' , gulp.series(comprimeImagens));   
+exports.default = function() {
+    gulp.watch('./source/styles/*.scss', {ignoreInitial: false} , gulp.series(compilaSass));
+    gulp.watch('./source/scripts/*.js' , {ignoreInitial: false} ,gulp.series(comprimeJavaScript));
+    gulp.watch('./source/images/*' , {ignoreInitial: false} ,gulp.series(comprimeImagens));   
 }
 
